@@ -330,3 +330,116 @@ cd Repos/ClasesMaster/Shell
 cat ~/.history Shell_classe2020-11-14.txt
 ll
 cat ~/.history >Shell_classe2020-11-14.txt
+l
+git add Shell_classe2020-11-14.txt
+cd ..
+git status
+git commit -m "Comandos de shell pipe,ls,cp,rm,mv,less,head,tail,mkdir,cd,git.."
+git status
+git log
+git remote add origin https://github.com/sotodosos/ClasesMaster26.git\
+git branch -M main\
+git push -u origin main
+git branch -M main
+git log
+git status
+type jupiter
+which jupiter
+which jupyter
+jupyter
+which jupyterlab
+which jupyternote
+clear
+cd
+find | wc
+find | wc -l
+find ./Repos
+find ./Repos| wc -l
+find . -name "text_file*"
+find  -name "text_file*"
+find  -name "tExt_file*"
+find  -iname "tExt_file*"
+find  -type d -iname "tExt_file*"
+find  -type f -iname "tExt_file*"
+find  -type f -maxdepth 5  -iname "tExt_file*"
+find  -type f -maxdepth 5 -mindepth 2 -iname "tExt_file*"
+find  -maxdepth 5 -mindepth 2 -type f  -iname "tExt_file*"
+find -type f  -perm 777
+sudo find -type f  -perm 777
+sudo find -type f ! -perm 777
+sudo find -type f -empty
+sudo find -type f -empty|wc -l
+sudo find -type f -size|wc -l
+sudo find -type f -size 0 |wc -l
+sudo find -type f -size +10 |wc -l
+sudo find -type f -size +100 |wc -l
+sudo find -type f -size +1000 |wc -l
+sudo find -type f -size +5000 |wc -l
+sudo find -type f -size +10000 |wc -l
+sudo find -type f -size 10000 |wc -l
+sudo find -type f -size -10000 |wc -l
+sudo find -type f -mmin 60 |wc -l
+sudo find -type f -mmin -60 |wc -l
+sudo find -type f -mmin -60 
+sudo find -type f -mmin -30 
+sudo find -type f -iname "text_file*"
+sudo find -type f -iname "text_file*" | wc
+sudo find -type f -iname "text_file*" -exec echo "FOUND IT" \;
+sudo find -type f -iname "text_file*" -exec echo "FOUND IT" 
+sudo find -type f -iname "text_file*" -exec echo "FOUND IT" ;
+sudo find -type f -iname "text_file*" -exec echo "FOUND IT" \\
+;
+echo this ; echo that
+echo this \; echo that
+sudo find -type f -iname "text_file*"
+sudo find -type f -iname "text_file*" -exec ls -l \;
+sudo find -type f -iname "text_file*"  \;
+sudo find -type f -iname "text_file*" 
+sudo find -type f -iname "text_file*" -exec ls -l {\;
+sudo find -type f -iname "text_file*" -exec ls -l {}\;
+sudo find -type f -iname "text_file*" -exec ls -l {} \;
+sudo find -type f -iname "text_file*" -exec ls -l {} \; -exec head -2
+sudo find -type f -iname "text_file*" -exec ls -l {} \; -exec head -2 \;
+sudo find -type f -iname "text_file*" -exec ls -l {} \;
+sudo find -type f -iname "text_file*" -exec head -2  {}  | wc \;
+sudo find -type f -iname "text_file*" -exec "head -2  {}  | wc" \;
+sudo find -type f -iname "text_file*" -exec head -2  {}  | wc \;
+sudo find -type f -iname "text_file*" -exec bash -c "head -2  {}  | wc" \;
+find -type f -mmin 60
+find . -type f -mmin 60
+find . -type f -mmin 90
+find . -type f -mmin 60
+find . -type f -mmin 90
+find . -type f -mmin 120
+find . -type f -mmin 60
+find . -type f -mmin 90
+find . -type f -mmin -60
+find . -type f -empty ! -perm 777
+find . -type f -empty ! -perm 777 -ok
+find . -type f -empty ! -perm 777 -ok chmod 777
+find . -type f - exec ls -Sl
+find . -type f  -exec ls -Sl \;
+find ~/Data -type f  -exec ls -Sl \;
+find ~/Data -type f \;
+find ~/Data -type f 
+find ~/Data -type f -exec ls -l {} \;
+find ~/Data -type f -exec batch -c "ls -Sl {} | head -3 "\;
+find ~/Data -type f -exec batch -c "ls -Sl {} | head -3 " \;
+find ~/Data -type f -exec bash -c "ls -Sl {} | head -3 " \;
+find ~/Data -type f -exec bash -c "ls -Sl  | head -3 " \;
+find ~/Data -type f -exec bash -c "ls -Sl  | head -3 " ;
+find ~/Data -type f -exec bash -c "ls -Sl  | head -4|tail -1 " \;
+find ~/Data -type f -exec bash -c "ls -Sl  | head -4  " \;
+find ~/Data -type f -exec bash -c "ls -Sl  | head -4 | tail -3 " \;
+find ~/Data -type f -exec bash -c "ls -Sl {} | head -4 | tail -3 " \;
+find ~/Data -type f -exec bash -c "ls -Sl {} " \;
+find ~/Data -type f -exec bash -c "ls -Sl {} | head -4 " \;
+find ~/Data -type f -exec bash -c "ls -Sl | head -4 " \;
+find ~/Data -type f -exec bash -c "ls -Sl | head -4 | tail -3 " \;
+find . -type f -empty ! -perm 777 -ok "chmod 777"
+find . -type f -empty ! -perm 777 -ok "chmod 777 {}"
+find . -type f -empty ! -perm 777 -ok "chmod 777 {}"\;
+find . -type f -empty ! -perm 777 -ok "chmod 777 {}\; "
+cd Repo
+cd Repos/ClasesMaster
+cat ~/.history > ./Shell/Shell_classe2020-11-14.txt
