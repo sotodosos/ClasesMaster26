@@ -1,0 +1,332 @@
+ls -ltr
+cd data
+cd Data
+ls -ltr
+cd ..
+cd books
+ls -ltr
+clear
+echo $SHELL
+echo $TERM
+whoami
+whoam
+whoami
+echo $HOST
+echo $USER
+printenv
+clear
+echo `date`
+echo "the world\
+\
+"
+echo "1\\
+asdf"
+echo aa; echo bb;
+echo this is \; punto y coma
+cat /etc/os-release
+cd Data
+cd shell
+ls
+cat Text_example.txt
+cat Text_example.txt Text_example.txt Text_example.txt
+cat -n Text_example.txt
+cat -n Text_example.txt Text_example.txt
+clear
+pwd
+pwd ~
+clear
+echo $pwc
+echo $PWD
+cd /home
+cd ~
+cd /Data/shell
+cd Data/shell
+cd ..
+cd -
+cd ~
+clear
+ls -al
+ls -1
+ls -1 -s
+ls --help
+ls -1s
+ls -s1
+ls -h
+ls -ltr
+ls -lt
+ls -r
+ls -laSr
+ls -laS
+ls -lat
+chmod 777 .history
+ls -l .history
+chmod 755 .history
+ls -l .history
+chmod 644 .history
+chmod 600 .history
+ls -l .history
+mkdir --help
+mkdir holi
+mkdir holi/cosas/nazis
+mkdir -p holi/cosas/nazis
+touch newfile
+ls -l newfile
+touch anaconda3
+ls -l anaconda3
+cd -
+cd ..
+cd ~
+cp newfile ~/holi/cosas/nazis
+mv newfile ~/holi/cosas/nazis
+ls 
+cd holi
+ls -ltr
+cd ..
+mkdir first_dir
+touch first_dir/text_file.txt
+cd first_dir
+ls -ltr
+chmod 774 text_file.txt
+chmod 776 text_file.txt
+ls -l
+mkdir sub1 sub2 text_file
+ls -l
+cp text_file.txt /sub1
+cp text_file.txt ~/sub1
+mv text_file.txt ~/sub2
+cd sub2
+mv text_file.txt test_file.txt.2
+mv text_file.txt ./test_file.txt.2
+cd ..
+mv text_file.txt ./sub2/test_file.txt.2
+ls -l
+cd sub2
+ls
+cd ../sub1
+ls -ltr
+cd sub1
+cd ..
+ls
+touch test_file.txt
+ls
+mv test_file.txt text_file.txt
+ls 
+cp text_file.txt ./sub1
+cd sub1
+ls
+mv text_file.txt ../sub2/text_file.txt.2
+cd ../sub2
+ls
+cd ..
+cp -r sub1 ./sub3
+cd sub3
+ls
+cd ..
+ls
+cd sub1
+ls
+cd..
+cd ..
+mv sub2/text_file.txt.2 sub2/text_file.txt.backup
+cd sub2
+ls
+cd ..
+ls sub2
+ls rm sub2
+rm sub2
+rm -r sub2
+ls
+git
+git config --global user.name "Jesus Pardos"
+git config --global user.email "jesus@pardos.io"
+cat ~/.gitconfig
+git clone https://github.com/sotodosos/kschool_master_v26.git
+ls -l
+cd kschool_master_v26
+ls -la
+touch chaci_file
+ls -la
+git status
+touch lame_file
+git add chaci_file
+git status
+git commit -m 'nuevo cambio'
+git status
+git push
+git status
+gif diff
+git diff
+ls
+mkdir Repos
+cd Repos
+git clone https://github.com/sotodosos/ejemplo.git
+git status
+ls -la
+cd ejemplo
+git status
+ls -la
+cat README.md
+clear
+gedit README.md
+git status
+gedit README.md
+git status
+gedit README.md
+git status
+git add README.md
+git status
+git commit
+git log
+git push
+git log
+gedit readme.md
+ls -la
+git log
+git status
+cd ..
+clear
+git init master_from_local
+ll
+cd master_from_local
+ls -la
+clear
+cd 
+cd Repos/master_from_local
+touch my_ideas.txt
+gedit my_ideas.txt
+git log
+git add my_ideas.txt
+git commit
+ls -la
+git log
+git status
+gedit my_second_idea.txt
+git status
+gedit my_ideas.txt
+git status
+git add -u
+git status
+git add my_second_idea.txt
+git status
+git commit -m "second idea added"
+git remote add origin https://github.com/sotodosos/my_ideas.git
+git log
+git branch -M main
+git push -u origin main
+git status
+git log
+git pull
+git log
+git status
+man cp
+man cp 
+man mv
+man cp
+cat --help
+cd 
+less .gitconfig
+cd Data/opentraveldata
+ll
+cat ref_airline_nb_of_flights.csv
+less ref_airline_nb_of_flights.csv
+less -N ref_airline_nb_of_flights.csv
+less optd_por_public.csv
+les -n optd_por_public.csv
+less -n optd_por_public.csv
+less -N optd_por_public.csv
+less -NS optd_por_public.csv
+ll
+less -n optd_aircraft.csv
+cd
+cd 
+alias
+l
+type ll
+MASTER=Kschool
+echo $MASTER
+alias gc="git commit -m"
+alias
+less .zshrc
+type python
+witch python
+which python
+whereis python
+cd Data/shell
+head Finn.txt
+ll
+head -5 Finn.txt
+head -n 5 Finn.txt
+head -n -5 Finn.txt
+tail -3
+tail -5 Finn.txt
+tail -n 5 Finn.txt
+tail -n -5 Finn.txt
+tail -n +5 Finn.txt
+wc
+wc Finn.txt
+wc -l Finn.txt
+wc -w Finn.txt
+wc -b Finn.txt
+wc --help
+wc -m Finn.txt
+wc -c Finn.txt
+echo "HELP MEEEE" | wc
+wc Text_example.txt
+cat Text_example.txt
+cat Text_example.txt | wc
+cat Text_example.txt | head 10 |wc
+cat Text_example.txt | head  |wc
+cat Text_example.txt | head -10 |wc
+cat Text_example.txt | head -3 |wc
+cat Text_example.txt | wc > salida
+cat salida
+file salida
+cat Text_example.txt | wc > salida
+cat Text_example.txt | wc >> salida
+cat salida
+wc < Text_example.txt
+ll
+clear
+cd ..
+ll
+cd opentraveldata
+ll
+ls -s
+ls -S
+ls -Sl
+ls -Sl| head -1
+ls -Sl| head -s
+ls -Sl| head -2
+ls -S| head -2
+l -Sl| head -2
+l -Sl| head -2|tail -1
+l -Sl| head -2|tail -1 > largest_file.txt
+less largest_file.txt
+cd ..
+cd shell
+ls
+head -5 Finn.txt
+head -5 Finn.txt|wc -w
+head -3 Text_example.txt
+head -3 Text_example.txt|less -n
+head -3 Text_example.txt|less -N
+head -3 Text_example.txt|cat -N
+head -3 Text_example.txt|cat -n
+cd
+cd Repos
+git init ClasesMaster
+cd ClasesMaster
+mkdir Shell
+mddir Python
+mkdir Python
+mkdir Challenge
+cd Shell
+~
+ls -la
+cd ~
+ls -la
+cat .history
+cd Repos/ClasesMaster/Shell
+cat ~/.history Shell_classe2020-11-14.txt
+ll
+cat ~/.history >Shell_classe2020-11-14.txt
