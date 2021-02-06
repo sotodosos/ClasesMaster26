@@ -1,0 +1,25 @@
+Region,geo_limit,geo_id
+peninsular,peninsular,8741
+canarias,canarias,8742
+baleares,baleares,8743
+ceuta,ceuta,8744
+melilla,melilla,8745
+Andalucía,ccaa,4
+Aragón,ccaa,5
+Cantabria,ccaa,6
+Castilla la Mancha,ccaa,7
+Castilla y León,ccaa,8
+Cataluña,ccaa,9
+País Vasco,ccaa,10
+Principado de Asturias,ccaa,11
+Comunidad de Ceuta,ccaa,8744
+Comunidad de Melilla,ccaa,8745
+Comunidad de Madrid,ccaa,13
+Comunidad de Navarra,ccaa,14
+Comunidad Valenciana,ccaa,15
+Extremadura,ccaa,16
+Galicia,ccaa,17
+Islas Baleares,ccaa,8743
+Islas Canarias,ccaa,8742
+La Rioja,ccaa,20
+Región de Murcia,ccaa,21
