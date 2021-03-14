@@ -2,3 +2,6 @@
 *~
 .ipynb_checkpoints
 API
+Python/__pycache__/Lectura_AEMET_REE.cpython-37.pyc
+Data/ree_system.csv
+Data/weather.csv
