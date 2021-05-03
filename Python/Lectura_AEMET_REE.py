@@ -161,7 +161,7 @@ class Ingestion_REE:
 
         return df_ree
     
-    ##
+    
     def read_ree_dates (self,date_ini,date_end):
     
         df_ree_system=pd.DataFrame()
