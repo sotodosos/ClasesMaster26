@@ -57,12 +57,14 @@ class Ingestion_AEMET:
         for element in tqdm(lista_estaciones):
             try:
                 valores_estacion=self.aemet.get_valores_climatologicos_diarios(date_ini,date_end,element)
+                time.sleep(.1)
                 if type(valores_estacion)!=dict:
                     valores_diarios.extend(valores_estacion)
             except:
-                time.sleep(56) # para evitar errores por nº de lecturas.
+                #time.sleep(56)  para evitar errores por nº de lecturas.
                 try:
                     valores_estacion=self.aemet.get_valores_climatologicos_diarios(date_ini,date_end,element)
+                    time.sleep(.1)
                     if type(valores_estacion)!=dict:
                         valores_diarios.extend(valores_estacion)
                 except:
@@ -110,7 +112,7 @@ class Ingestion_AEMET:
     def read_from_csv(self):
     
         path_weather=self.path_Data+'weather.csv'
-        return pd.read_csv(path_weather,index_col=0)
+        return pd.read_csv(path_weather,index_col=0,dtype=str)
 
     
     
@@ -200,5 +202,5 @@ class Ingestion_REE:
     def read_from_csv(self):
 
         path_ree=self.path_Data+'ree_system.csv'
-        return pd.read_csv('../Data/ree_system.csv',index_col=0)
+        return pd.read_csv('../Data/ree_system.csv',index_col=0,dtype=str)
         
