@@ -81,10 +81,10 @@ def target_preprocesing(df,targets_values,targets_precentage,systems_names):
     
 def date_transform(df):
 
-  df['year']=np.log(df['fecha'].str.slice(0,4).astype(int))
-  df['day']=np.cos(((2*np.pi)/31)*df['fecha'].str.slice(8,10).astype(int))
-  df['month']=np.cos(((2*np.pi)/12)*df['fecha'].str.slice(5,7).astype(int))
-  df['weekday']=np.cos(((2*np.pi)/7)*df['weekday'].astype(int))
+  df['year']=np.log(df['year'])
+  df['day']=np.cos(((2*np.pi)/31)*df['day'])
+  df['month']=np.cos(((2*np.pi)/12)*df['month'])
+  df['weekday']=np.cos(((2*np.pi)/7)*df['weekday'])
 
   return df
   
