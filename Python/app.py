@@ -70,14 +70,22 @@ if submit_button_predict and err==0:
     st.dataframe(features.info())
     
     reg_renov = joblib.load('best_model_renovable.sav')
-    pred_renov=reg_renov.predict(features)
-    st.write(pred_renov)
+    perc_renov=reg_renov.predict(features)
+    st.write(perc_renov)
     
-    reg_generation = joblib.load('best_model_generation.sav')
-    pred_generation=reg_generation.predict(features)
-    st.write(pred_generation)
+    reg_generation = joblib.load('best_model_Generation.sav')
+    value_generation=reg_generation.predict(features)
+    st.write(value_generation)
     
     reg_tech = joblib.load('best_model_tech.sav')
-    pred_tech=reg_tech.predict(features)
-    st.write(pred_tech)
+    value_tech=reg_tech.predict(features)
+    st.write(value_tech)
 
+    perc_generation=1.0
+    value_renov=perc_renov*value_generation
+    
+    perc_norenov=1-perc_renov
+    value_norenov=value_generation-value_renov
+    
+    perc_tech=value_tech/value_generation
+    

@@ -62,11 +62,9 @@ def sns_generacion(df,tech,systems,fecini_zoom,fecfin_zoom):
   sns.set_palette("Set1")
   return None
 
-def target_preprocesing(df,targets_values,targets_precentage,systems_names):
+def target_preprocesing(df,targets_precentage,systems_names):
 
-    for target in targets_values:
-      df[target]=df[target]*df['Generacion_Mwh']
-
+    
     for target in targets_precentage:
       df[target]=(df[target]*df['Generacion_Mwh'])
 
@@ -77,6 +75,7 @@ def target_preprocesing(df,targets_values,targets_precentage,systems_names):
     for target in targets_precentage:
       df_group[target]=(df_group[target]/df_group['Generacion_Mwh'])
     
+     
     return df_group
     
 def date_transform(df):
@@ -123,8 +122,13 @@ def evaluation_function(y_real,y_pred,model):
   results['RMSE']=[result_rmse]
   return pd.DataFrame.from_dict(data=results)
 
-def plot_metrics(df):
+def plot_metrics(list_reg):
 
+  df=list_reg[0]
+  
+  for element in list_reg[1:]:
+    df=df.append(element)
+    
   fig, ax =plt.subplots(2,1,sharey=True)
   fig.set_size_inches(12,10)
   fig.suptitle('Comparativa de metricas entre Modelos', fontsize=12)
