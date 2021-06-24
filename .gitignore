@@ -1,7 +1,7 @@
 *backup
 *~
 .ipynb_checkpoints
-API
+API_KEY*
 Python/__pycache__/
 Data/ree_system.csv
 Data/weather.csv
