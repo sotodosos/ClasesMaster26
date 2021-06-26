@@ -13,7 +13,7 @@ def limpieza(df, cols):
     Inputs:
     :param df:Pandas DataFrame
     :param cols: list of variables
-        Output
+    Output
     :return df: Pandas DataFrame with the variables of cols converted to number
     '''
     for element in cols:

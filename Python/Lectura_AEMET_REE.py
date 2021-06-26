@@ -129,20 +129,20 @@ class Ingestion_AEMET:
 
     def save_to_csv(self, df):
         '''
-        Saves DataFrame to weather.csv
+        Saves DataFrame to 1_weather.csv
         :param df: Datarame to save
         :return:
         '''
-        path_weather=self.path_Data+'weather.csv'
+        path_weather=self.path_Data+'1_weather.csv'
         df.to_csv(path_weather)
 
     def read_from_csv(self):
         '''
-        Read  weather.csv
+        Read 1_weather.csv
         :return: Pandas DataFrame
         '''
     
-        path_weather=self.path_Data+'weather.csv'
+        path_weather=self.path_Data+'1_weather.csv'
         return pd.read_csv(path_weather, index_col=0, dtype=str)
     
     
@@ -252,7 +252,7 @@ class Ingestion_REE:
         :param df: Datarame to save
         :return:
         '''
-        path_ree=self.path_Data+'ree_system.csv'
+        path_ree=self.path_Data+'1_ree_system.csv'
         df.to_csv(path_ree)
     
     
@@ -261,6 +261,6 @@ class Ingestion_REE:
         Read ree_system.csv
         :return: Pandas DataFrame
         '''
-        path_ree=self.path_Data+'ree_system.csv'
+        path_ree=self.path_Data+'1_ree_system.csv'
         return pd.read_csv(path_ree,index_col=0)
         

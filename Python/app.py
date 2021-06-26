@@ -26,7 +26,7 @@ with st.sidebar:
         weather = {}
         err = 0
         start_date = dt.date.today()
-        start_date = st.date_input('Fecha de inicio', value=start_date)
+        start_date = st.date_input('Date', value=start_date)
         weather['system'] = st.selectbox('Ree System', ['peninsular', 'canarias', 'baleares', 'melilla'])
         date = str(start_date)
         list_date = date.split('-')
@@ -45,16 +45,16 @@ with st.sidebar:
         else: 
             weather['Holiday'] = 1
             
-        weather['presMax'] = st.slider('Max pressure:', min_value=850.0, max_value=1100.0, step=0.1, value=1000.0)
-        weather['presMin'] = st.slider('Min pressure:', min_value=850.0, max_value=1100.0, step=0.1, value=900.0)
+        weather['presMax'] = st.slider('Max pressure (hPa):', min_value=850.0, max_value=1100.0, step=0.1, value=1000.0)
+        weather['presMin'] = st.slider('Min pressure (hPa):', min_value=850.0, max_value=1100.0, step=0.1, value=950.0)
         if weather['presMax'] <= weather['presMin']:
             st.error('Error: Max pressure have to be greater than Min pressure')
             err = 1
         
-        weather['sol'] = st.slider('Sun hours:', min_value=-0.0, max_value=15.0, step=1.0, value=8.0)
-        weather['tmax'] = st.slider('Max temperature:', min_value=-30.0, max_value=50.0, step=0.1, value=20.0)
-        weather['tmed'] = st.slider('Average temperature:', min_value=-30.0, max_value=50.0, step=0.1, value=15.0)
-        weather['tmin'] = st.slider('Min temperature:', min_value=-30.0, max_value=50.0, step=0.1, value=10.0)
+        weather['sol'] = st.slider('Sun hours (hours):', min_value=-0.0, max_value=15.0, step=1.0, value=8.0)
+        weather['tmax'] = st.slider('Max temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=20.0)
+        weather['tmed'] = st.slider('Average temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=15.0)
+        weather['tmin'] = st.slider('Min temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=10.0)
         if weather['tmax'] <= weather['tmed']:
             st.error('Error: Max temperature can´t be lower than Average temperature')
             err = 1
@@ -65,10 +65,10 @@ with st.sidebar:
             st.error('Error: Max temperature can´t be lower than min temperature')
             err = 1
             
-        weather['prec'] = st.slider('Precipitations:', min_value=0.0, max_value=200.0, step=0.01, value=0.0)
+        weather['prec'] = st.slider('Precipitations (mm):', min_value=0.0, max_value=200.0, step=0.01, value=0.0)
         
-        weather['velmedia'] = st.slider('Average wind speed:', min_value=0.0, max_value=70.0, step=0.01, value=3.0)
-        weather['racha'] = st.slider('Max wind speed:', min_value=0.0, max_value=140.0, step=0.01, value=10.0)
+        weather['velmedia'] = st.slider('Average wind speed (km/h):', min_value=0.0, max_value=70.0, step=0.01, value=3.0)
+        weather['racha'] = st.slider('Max wind speed (km/h):', min_value=0.0, max_value=140.0, step=0.01, value=10.0)
         if weather['racha'] <= weather['velmedia']:
             st.error('Error: Average wind speed can´t be lower than max wind speed')
             err = 1
