@@ -226,20 +226,20 @@ def plot_metrics(list_reg):
       df = df.append(element)
     
   fig, ax =plt.subplots(3, 1, sharey=True)
-  fig.set_size_inches(12, 12)
+  fig.set_size_inches(12, 16)
   fig.suptitle('Comparativa de metricas entre Modelos', fontsize=12)
  
   #MAE
   sns.barplot(y=df['Model_name'], x=df['MAE'], ax=ax[0])
-  ax[0].set_title("MAE Compare", fontsize=10)
+  ax[0].set_title("MAE Compare", fontsize=9)
   
   #RMSE
   sns.barplot(y=df['Model_name'], x=df['RMSE'], ax=ax[1])
-  ax[1].set_title("RMSE Compare", fontsize=10)
+  ax[1].set_title("RMSE Compare", fontsize=9)
 
   #R2
   sns.barplot(y=df['Model_name'], x=df['R2'], ax=ax[2])
-  ax[2].set_title("R2 Compare", fontsize=10)
+  ax[2].set_title("R2 Compare", fontsize=9)
 
   return None
   

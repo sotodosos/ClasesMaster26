@@ -6,18 +6,15 @@ import matplotlib.pyplot as plt
 import joblib
 from utils import chart_altair
 
-cols = ['day', 'year', 'month', 'system', 'Holiday', 'weekday', 'tmin','tmed', 'presMin', 'prec', 'sol', 'velmedia', 'tmax', 'presMax', 'racha']
+#cols = ['day', 'year', 'month', 'system', 'Holiday', 'weekday', 'tmin','tmed', 'presMin', 'prec', 'sol', 'velmedia', 'tmax', 'presMax', 'racha']
 cols_renov= ['day', 'year', 'month', 'system', 'Holiday', 'weekday', 'tmin', 'presMin', 'prec', 'sol', 'velmedia', 'tmax', 'presMax', 'racha']
 
-
-features = pd.DataFrame(columns=cols)
+features = pd.DataFrame(columns=cols_renov)
 path_model = '../models/'
 path_data = '../Data/'
 
 st.set_page_config(page_title='Electric Generation',layout='wide')
 st.title("Predict Electric Generation from weather")
-
-
 
 
 with st.sidebar:
@@ -53,22 +50,16 @@ with st.sidebar:
         
         weather['sol'] = st.slider('Sun hours (hours):', min_value=-0.0, max_value=15.0, step=1.0, value=8.0)
         weather['tmax'] = st.slider('Max temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=20.0)
-        weather['tmed'] = st.slider('Average temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=15.0)
         weather['tmin'] = st.slider('Min temperature (ºC):', min_value=-30.0, max_value=50.0, step=0.1, value=10.0)
-        if weather['tmax'] <= weather['tmed']:
-            st.error('Error: Max temperature can´t be lower than Average temperature')
-            err = 1
-        elif weather['tmed'] <= weather['tmin']:
-            st.error('Error: Average temperature can´t be lower than min temperature')
-            err = 1
-        elif weather['tmax'] <= weather['tmin']:
+
+        if weather['tmax'] <= weather['tmin']:
             st.error('Error: Max temperature can´t be lower than min temperature')
             err = 1
             
         weather['prec'] = st.slider('Precipitations (mm):', min_value=0.0, max_value=200.0, step=0.01, value=0.0)
         
-        weather['velmedia'] = st.slider('Average wind speed (km/h):', min_value=0.0, max_value=70.0, step=0.01, value=3.0)
-        weather['racha'] = st.slider('Max wind speed (km/h):', min_value=0.0, max_value=140.0, step=0.01, value=10.0)
+        weather['velmedia'] = st.slider('Average wind speed (m/s):', min_value=0.0, max_value=30.0, step=0.01, value=4.0)
+        weather['racha'] = st.slider('Max wind speed (m/s):', min_value=0.0, max_value=60.0, step=0.01, value=10.0)
         if weather['racha'] <= weather['velmedia']:
             st.error('Error: Average wind speed can´t be lower than max wind speed')
             err = 1
@@ -82,7 +73,7 @@ if submit_button_predict and err == 0:
     perc_renov = reg_renov.predict(features[cols_renov])
         
     reg_generation = joblib.load(path_model+'best_model_Generation.sav')
-    value_generation = reg_generation.predict(features)
+    value_generation = reg_generation.predict(features[cols_renov])
 
     reg_tech = joblib.load(path_model+'best_model_tech.sav')
     value_tech = reg_tech.predict(features[cols_renov])
@@ -110,6 +101,7 @@ if submit_button_predict and err == 0:
     st.write('---------------------------------------------')
 
     st.header('Predicted values')
+    st.write('\n')
     st.write('\n')
 
     c1, c2 = st.beta_columns((4, 5))
